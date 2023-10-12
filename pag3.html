@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffecf2;
+            /* Cor de fundo romântica */
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #ff2e63;
+            /* Cor do título */
+        }
+
+        #slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #ff2e63;
+            /* Cor dos botões de navegação */
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: #ff2e63;
+            /* Cor de destaque dos botões de navegação ao passar o mouse */
+            color: #fff;
+            /* Cor do texto dos botões de navegação ao passar o mouse */
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        img{
+            height: 850px;
+            width: 550px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Slideshow Romântico</h1>
+
+    <div id="slideshow-container">
+        <div class="mySlides">
+            <img src="./assets/034C12F4-FBE7-438B-A6F5-954C0326B76E.jpg" alt="Imagem 1" >
+        </div>
+
+        <div class="mySlides">
+            <img src="./assets/306C1E25-8DD2-4E7F-99B4-F491A44025F1.jpg" alt="Imagem 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="./assets/96CA4322-5BD4-49B4-9B04-BB5A2EDA68CB.jpg" alt="Imagem 3">
+        </div>
+
+        <div class="mySlides">
+            <img src="./assets/AEAA0626-2304-4949-B2DF-E6BB29D974A4.jpg" alt="Imagem 4">
+        </div>
+
+        <div class="mySlides">
+            <img src="./assets/EF770A08-477A-4897-8E48-7BF5C7BC6726.jpg" alt="Imagem 5">
+        </div>
+
+        <div class="mySlides">
+            <img src="./assets/IMG_2014.jpg" alt="Imagem 6">
+        </div>
+
+        <div class="mySlides">
+            <img src="./assets/IMG_2022.jpg" alt="Imagem 7">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let contador=0;
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides (n) {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+
+            if(contador ==8){
+                window.location.replace("./pag2.html")
+            }
+            contador++;
+        }
+    </script>
+
+</body>
+
+</html>

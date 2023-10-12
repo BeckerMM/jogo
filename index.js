@@ -14,8 +14,8 @@ const addTexto = (valor) => {
 
     if (contador == 9) {
         setTimeout(() => {
-        window.location.replace("./pag2.html");
-    }, "60000");
+        window.location.replace("./pag3.html");
+    }, "30000");
 }
 
 }

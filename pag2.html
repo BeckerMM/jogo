@@ -18,8 +18,9 @@
 
         #movable-button {
             position: absolute;
-            width: 20%;
-            height: 20%;
+            right: 500px;
+            width: 150px;
+            height: 80px;
             background-color: red;
             color: white;
             font-size: 30px;
@@ -42,28 +43,45 @@
            flex-direction: column;
         }
         #botaoSim{
-            width: 20%;
-            height: 50%;
+            position: absolute;
+            left: 500px;
+            width: 150px;
+            height: 80px;
             background-color: green;
             color: white;
             font-size: 30px;
             border-radius: 10px;
             border: none;
-            margin-bottom: 10px;
+        }
+
+        #botaoSim:hover{
+            background-color: rgb(80, 195, 80);
+            cursor: pointer;
+        }
+
+        .texto{
+            position: absolute;
+            align-self: center;
+            top: 200px;
+            color: white;
         }
     </style>
 </head>
 
 <body>
     <div class="div">
+        <h1 class="texto">Quer Namorar Comigo?</h1>
         <div class="botoes">
-            <button id="botaoSim"> SIM</button>
+            <button id="botaoSim" onclick="sim()"> SIM</button>
             <button id="movable-button" onmouseover="moveButton() ">NÃO</button>
         </div>
     </div>
     <script>
         const button = document.getElementById('movable-button');
+        const  sim = ()=>{
+                window.location.replace('./pag4.html');
 
+            }
         const moveButton = () => {
             console.log('moveButton');
             const maxWidth = window.innerWidth - button.clientWidth;
